@@ -8,23 +8,43 @@
 import UIKit
 
 class NewPlaceViewController: UITableViewController {
-
-    @IBOutlet var imageOfPlace: UIImageView!
+    var newPlace: Place?
+    
+    @IBOutlet var placeImage: UIImageView!
+    
+    @IBOutlet var placeName: UITextField!
+    @IBOutlet var saveButton: UIBarButtonItem!
+    
+    @IBOutlet var placeLocation: UITextField!
+    
+    @IBOutlet var placeType: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        saveButton.isEnabled = false
+        placeName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         if indexPath.row == 0 {
+            
+            let camerIcon = #imageLiteral(resourceName: "camera")
+            let photoIcon = #imageLiteral(resourceName: "photo")
+            
             let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             let camera = UIAlertAction(title: "Camera", style: .default){_ in
                 self.chooseImagePicker(source: .camera)
                 
             }
+            camera.setValue(camerIcon, forKey: "Image")
+            camera.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
+            
             let photo = UIAlertAction(title: "Photo", style: .default){ _ in
                 self.chooseImagePicker(source: .photoLibrary)
             }
+            photo.setValue(photoIcon, forKey: "Image")
+            photo.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
+            
             let cancel = UIAlertAction(title: "Cancel", style: .cancel)
             
             actionSheet.addAction(camera)
@@ -38,12 +58,34 @@ class NewPlaceViewController: UITableViewController {
         }
     }
     
+    func saveNewPlace(){
+        
+        newPlace = Place(name: placeName.text!,
+                         location: placeLocation.text,
+                         type: placeType.text,
+                         restaurantImage: nil,
+                         image: placeImage.image)
+        
+    }
+    
+    @IBAction func cancelAction(_ sender: Any) {
+        dismiss(animated: true)
+    }
 }
 
 extension NewPlaceViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{
         textField.resignFirstResponder()
         return true
+    
+    }
+    
+    @objc private func textFieldChanged(){
+        if placeName.text?.isEmpty == false{
+            saveButton.isEnabled = true
+        } else {
+            saveButton.isEnabled = false
+        }
     }
 }
 
@@ -66,9 +108,9 @@ extension NewPlaceViewController: UIImagePickerControllerDelegate, UINavigationC
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]){
         
-        imageOfPlace.image = info[.editedImage] as? UIImage
-        imageOfPlace.contentMode = .scaleAspectFill
-        imageOfPlace.clipsToBounds = true
+        placeImage.image = info[.editedImage] as? UIImage
+        placeImage.contentMode = .scaleAspectFill
+        placeImage.clipsToBounds = true
         dismiss(animated: true)
         
     }

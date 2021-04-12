@@ -169,7 +169,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Place name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="poW-Ci-aq3">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Place location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="poW-Ci-aq3">
                                                             <rect key="frame" x="0.0" y="31.5" width="382" height="27.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
@@ -202,7 +202,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Place name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cu4-0D-hxs">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Place type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cu4-0D-hxs">
                                                             <rect key="frame" x="0.0" y="33.5" width="382" height="29.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
@@ -233,13 +233,21 @@
                     <navigationItem key="navigationItem" title="New Place" id="PFc-gm-UhU">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="3dP-Yq-L4l">
                             <connections>
-                                <segue destination="JFS-UG-10i" kind="unwind" unwindAction="cancelAction:" id="Xny-HS-BzJ"/>
+                                <action selector="cancelAction:" destination="UeG-DC-Qea" id="84u-sg-0J4"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="a20-4U-lPR"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="a20-4U-lPR">
+                            <connections>
+                                <segue destination="JFS-UG-10i" kind="unwind" unwindAction="unwindSegue:" id="Ld0-18-L7y"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageOfPlace" destination="oH9-wa-ZSz" id="Egf-0a-goR"/>
+                        <outlet property="placeImage" destination="oH9-wa-ZSz" id="Egf-0a-goR"/>
+                        <outlet property="placeLocation" destination="poW-Ci-aq3" id="pmM-68-2Yj"/>
+                        <outlet property="placeName" destination="b7s-Zh-aUB" id="CJZ-mm-Gxr"/>
+                        <outlet property="placeType" destination="cu4-0D-hxs" id="CQo-Sd-MBp"/>
+                        <outlet property="saveButton" destination="a20-4U-lPR" id="YyO-f5-Utw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RXX-xo-uZu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
