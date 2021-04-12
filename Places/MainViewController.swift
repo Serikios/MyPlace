@@ -14,6 +14,8 @@ class MainViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func cancelAction(_ segue: UIStoryboardSegue) {}
 
     // MARK: - Table view data source
 
