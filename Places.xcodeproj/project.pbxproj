@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		E109F8E326239386000439A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E109F8E226239386000439A6 /* AppDelegate.swift */; };
 		E109F8E526239386000439A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E109F8E426239386000439A6 /* SceneDelegate.swift */; };
-		E109F8E726239386000439A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E109F8E626239386000439A6 /* ViewController.swift */; };
 		E109F8EA26239386000439A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E109F8E826239386000439A6 /* Main.storyboard */; };
 		E109F8EC26239388000439A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E109F8EB26239388000439A6 /* Assets.xcassets */; };
 		E109F8EF26239388000439A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E109F8ED26239388000439A6 /* LaunchScreen.storyboard */; };
 		E109F8FA26239389000439A6 /* PlacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E109F8F926239389000439A6 /* PlacesTests.swift */; };
 		E109F90526239389000439A6 /* PlacesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E109F90426239389000439A6 /* PlacesUITests.swift */; };
+		E109F91326243F2C000439A6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E109F91226243F2C000439A6 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 		E109F8DF26239386000439A6 /* Places.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Places.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E109F8E226239386000439A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E109F8E426239386000439A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E109F8E626239386000439A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E109F8E926239386000439A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E109F8EB26239388000439A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E109F8EE26239388000439A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		E109F90026239389000439A6 /* PlacesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlacesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E109F90426239389000439A6 /* PlacesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesUITests.swift; sourceTree = "<group>"; };
 		E109F90626239389000439A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E109F91226243F2C000439A6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				E109F8E226239386000439A6 /* AppDelegate.swift */,
+				E109F91226243F2C000439A6 /* MainViewController.swift */,
 				E109F8E426239386000439A6 /* SceneDelegate.swift */,
-				E109F8E626239386000439A6 /* ViewController.swift */,
 				E109F8E826239386000439A6 /* Main.storyboard */,
 				E109F8EB26239388000439A6 /* Assets.xcassets */,
 				E109F8ED26239388000439A6 /* LaunchScreen.storyboard */,
@@ -258,7 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E109F8E726239386000439A6 /* ViewController.swift in Sources */,
+				E109F91326243F2C000439A6 /* MainViewController.swift in Sources */,
 				E109F8E326239386000439A6 /* AppDelegate.swift in Sources */,
 				E109F8E526239386000439A6 /* SceneDelegate.swift in Sources */,
 			);
